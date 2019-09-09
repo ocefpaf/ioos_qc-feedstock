@@ -1,4 +1,4 @@
-{% set version = "0.1.1" %}
+{% set version = "0.2.0" %}
 
 package:
   name: ioos_qc
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/axiom-data-science/ioos_qc/archive/{{ version }}.tar.gz
-  sha256: ddb6c3774e18935dbc2a19e27c174a84af2371d34ef11ce2e76a93a9bb86ee50
+  sha256: 449c6608ebd5f6d414f51788a063e2e17ba391561335903a8cd504e5d4b572e4
 
 build:
   number: 0
