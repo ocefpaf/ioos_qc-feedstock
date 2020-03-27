@@ -1,12 +1,12 @@
-{% set version = "0.2.1" %}
+{% set version = "1.0.0" %}
 
 package:
   name: ioos_qc
   version: {{ version }}
 
 source:
-  url: https://github.com/axiom-data-science/ioos_qc/archive/{{ version }}.tar.gz
-  sha256: 2d1d734e350bee86a0bb4adb2150808c5bb4b418569e7681347b9f77a2c2a65c
+  url: https://github.com/ioos/ioos_qc/archive/{{ version }}.tar.gz
+  sha256: 5e75ef9ea4dacb90ca28b18427a0ba7250d5dda006838fa96df7dc715b292260 
 
 build:
   number: 0
@@ -32,7 +32,7 @@ test:
     - ioos_qc
 
 about:
-  home: https://github.com/axiom-data-science/ioos_qc
+  home: https://github.com/ioos/ioos_qc
   license: Apache 2.0
   license_file:  LICENSE.txt
   summary: |

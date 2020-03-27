@@ -1,7 +1,7 @@
 About ioos_qc
 =============
 
-Home: https://github.com/axiom-data-science/ioos_qc
+Home: https://github.com/ioos/ioos_qc
 
 Package license: Apache 2.0
 
