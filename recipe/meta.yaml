@@ -1,39 +1,51 @@
-{% set version = "1.0.0" %}
+{% set name = "ioos_qc" %}
+{% set version = "2.0.0" %}
+
 
 package:
-  name: ioos_qc
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/ioos/ioos_qc/archive/{{ version }}.tar.gz
-  sha256: 5e75ef9ea4dacb90ca28b18427a0ba7250d5dda006838fa96df7dc715b292260 
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ioos_qc-{{ version }}.tar.gz
+  sha256: bf6b2f8bee4745c8bd6d71f3aa9ca138c7c3816676dfd3daffe0ee7b3bc9fb2e
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
     - pip
+    - python >=3.6,<4.0
   run:
-    - python
     - geojson
+    - geopandas
+    - jsonschema
     - netcdf4
+    - numba
     - numpy >=1.14
-    - pygc
+    - pyproj
+    - python >=3.6,<4.0
     - ruamel.yaml
+    - scipy
+    - shapely
     - simplejson
     - xarray
 
 test:
   imports:
     - ioos_qc
+    - ioos_qc.config_creator
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/ioos/ioos_qc
-  license: Apache 2.0
+  license: Apache-2.0
   license_file:  LICENSE.txt
   summary: |
     Collection of utilities, scripts and tests to assist in automated
