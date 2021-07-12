@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/ioos/ioos_qc/archive/{{ version }}.tar.gz
-  sha256: 5e75ef9ea4dacb90ca28b18427a0ba7250d5dda006838fa96df7dc715b292260 
+  sha256: 5e75ef9ea4dacb90ca28b18427a0ba7250d5dda006838fa96df7dc715b292260
 
 build:
   number: 0
@@ -15,15 +15,20 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
   run:
-    - python
+    - python >=3.6
     - geojson
-    - netcdf4
+    - geopandas
+    - jsonschema
+    - netCDF4
+    - numba
     - numpy >=1.14
-    - pygc
+    - pyproj
     - ruamel.yaml
+    - scipy
+    - shapely
     - simplejson
     - xarray
 
@@ -33,8 +38,8 @@ test:
 
 about:
   home: https://github.com/ioos/ioos_qc
-  license: Apache 2.0
-  license_file:  LICENSE.txt
+  license: Apache-2.0
+  license_file: LICENSE.txt
   summary: |
     Collection of utilities, scripts and tests to assist in automated
     quality assurance and quality control for oceanographic datasets and
