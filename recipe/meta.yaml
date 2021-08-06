@@ -1,5 +1,5 @@
 {% set name = "ioos_qc" %}
-{% set version = "2.0.0" %}
+{% set version = "2.0.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ioos_qc-{{ version }}.tar.gz
-  sha256: bf6b2f8bee4745c8bd6d71f3aa9ca138c7c3816676dfd3daffe0ee7b3bc9fb2e
+  sha256: e03d981a2dc8479555aba88f76945c0243184c03976eb2fb457ed1b8655cd27d
 
 build:
   number: 0
@@ -46,7 +46,7 @@ test:
 about:
   home: https://github.com/ioos/ioos_qc
   license: Apache-2.0
-  license_file:  LICENSE.txt
+  license_file: LICENSE.txt
   summary: |
     Collection of utilities, scripts and tests to assist in automated
     quality assurance and quality control for oceanographic datasets and
