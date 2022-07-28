@@ -11,7 +11,7 @@ source:
   sha256: e03d981a2dc8479555aba88f76945c0243184c03976eb2fb457ed1b8655cd27d
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -32,7 +32,9 @@ requirements:
     - scipy
     - shapely
     - simplejson
-    - xarray
+    # xarray is py38 only after that version and we need
+    # https://github.com/ioos/ioos_qc/pull/78 first.
+    - xarray <2022.3.0
 
 test:
   imports:
