@@ -29,6 +29,7 @@ requirements:
     - numpy >=1.14
     - pandas
     - pyparsing
+    - python >=3.7,<4.0
     - ruamel.yaml
     - scipy
     - shapely
