@@ -7,19 +7,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ioos_qc-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ioos_qc-{{ version }}.tar.gz
   sha256: 86a43e1b337cd2e0e95960a227fc9f042e6c0d4823ad02ba539bb5d27d12b7a8
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
+    - python {{ python_min }}
     - pip
-    - python >=3.7,<4.0
+    - setuptools
   run:
+    - python >={{ python_min }}
     - bokeh
     - geographiclib
     - geojson
@@ -36,13 +38,33 @@ requirements:
     - xarray
 
 test:
-  imports:
-    - ioos_qc
-    - ioos_qc.config_creator
+  requires:
+    - python {{ python_min }}
+    - pip
   commands:
     - pip check
-  requires:
-    - pip
+  imports:
+    - ioos_qc
+  
+outputs:
+  - name: ioos_qc
+  - name: ioos-qc
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python {{ python_min }}
+      run:
+        - {{ pin_subpackage("ioos_qc", max_pin="x.x.x") }}
+        - python >={{ python_min }}
+    test:
+      requires:
+        - pip
+        - python {{ python_min }}
+      commands:
+        - pip check
+      imports:
+        - ioos_qc
 
 about:
   home: https://github.com/ioos/ioos_qc

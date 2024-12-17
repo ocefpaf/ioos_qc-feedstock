@@ -1,11 +1,11 @@
-About ioos_qc
-=============
+About ioos_qc-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ioos_qc-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/ioos/ioos_qc
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ioos_qc-feedstock/blob/main/LICENSE.txt)
 
 Summary: Collection of utilities, scripts and tests to assist in automated
 quality assurance and quality control for oceanographic datasets and
@@ -30,6 +30,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-ioos--qc-green.svg)](https://anaconda.org/conda-forge/ioos-qc) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ioos-qc.svg)](https://anaconda.org/conda-forge/ioos-qc) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ioos-qc.svg)](https://anaconda.org/conda-forge/ioos-qc) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ioos-qc.svg)](https://anaconda.org/conda-forge/ioos-qc) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-ioos_qc-green.svg)](https://anaconda.org/conda-forge/ioos_qc) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ioos_qc.svg)](https://anaconda.org/conda-forge/ioos_qc) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ioos_qc.svg)](https://anaconda.org/conda-forge/ioos_qc) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ioos_qc.svg)](https://anaconda.org/conda-forge/ioos_qc) |
 
 Installing ioos_qc
@@ -42,41 +43,41 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `ioos_qc` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `ioos-qc, ioos_qc` can be installed with `conda`:
 
 ```
-conda install ioos_qc
-```
-
-or with `mamba`:
-
-```
-mamba install ioos_qc
-```
-
-It is possible to list all of the versions of `ioos_qc` available on your platform with `conda`:
-
-```
-conda search ioos_qc --channel conda-forge
+conda install ioos-qc ioos_qc
 ```
 
 or with `mamba`:
 
 ```
-mamba search ioos_qc --channel conda-forge
+mamba install ioos-qc ioos_qc
+```
+
+It is possible to list all of the versions of `ioos-qc` available on your platform with `conda`:
+
+```
+conda search ioos-qc --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search ioos-qc --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search ioos_qc --channel conda-forge
+mamba repoquery search ioos-qc --channel conda-forge
 
-# List packages depending on `ioos_qc`:
-mamba repoquery whoneeds ioos_qc --channel conda-forge
+# List packages depending on `ioos-qc`:
+mamba repoquery whoneeds ioos-qc --channel conda-forge
 
-# List dependencies of `ioos_qc`:
-mamba repoquery depends ioos_qc --channel conda-forge
+# List dependencies of `ioos-qc`:
+mamba repoquery depends ioos-qc --channel conda-forge
 ```
 
 
@@ -98,7 +99,7 @@ available continuous integration services. Thanks to the awesome service provide
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
 [Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
 it is possible to build and upload installable packages to the
-[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
